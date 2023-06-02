@@ -9,6 +9,7 @@ export default function App() {
   const [answer, setAnswer] = useState(null);
   const [options, setOptions] = useState([]);
   const [optionClicked, setOptionClicked] = useState(false);
+  const [rightAnswer, setRightAnswer] = useState(false);
 
   useEffect(() => {
     axios("https://restcountries.com/v3.1/all").then((res) => {
@@ -28,8 +29,7 @@ export default function App() {
   };
   const checkAnswer = (ans) => {
     setOptionClicked(true);
-    const isAnswerRight = answer === ans;
-    console.log(isAnswerRight);
+    setRightAnswer(answer === ans);
   };
 
   const handleNextBtnClick = () => {
@@ -47,6 +47,7 @@ export default function App() {
           checkAnswer={checkAnswer}
           handleNextBtnClick={handleNextBtnClick}
           optionClicked={optionClicked}
+          rightAnswer={rightAnswer}
         />
       </div>
     </div>
