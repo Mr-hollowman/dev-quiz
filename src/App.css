@@ -14,11 +14,16 @@
 }
 .options{
   display: flex;
-  gap: 15px;
+  align-items: center;
+  justify-content: space-between;
   padding: 10px;
   border-radius: 12px;
   border: 1px solid #6066D0;
   margin-bottom: 10px;
+}
+.opt{
+  display: flex;
+  gap: 15px;
 }
 .options:hover{
   background-color: #F9A826;
@@ -30,4 +35,10 @@
 
 .wrong-ans{
   background-color: #EA8282 !important;
+}
+
+.icon{
+  color: white;
+  border: 1px solid white;
+  border-radius: 100%;
 }
