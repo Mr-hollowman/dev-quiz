@@ -9,6 +9,7 @@ export default function App() {
   const [answer, setAnswer] = useState(null);
   const [options, setOptions] = useState([]);
   const [optionClicked, setOptionClicked] = useState(false);
+  const [selectedIndex, setSelectedIndex] = useState(null);
 
   useEffect(() => {
     axios("https://restcountries.com/v3.1/all").then((res) => {
@@ -27,16 +28,15 @@ export default function App() {
     }
     setOptions(options);
   };
-  const checkAnswer = (ans, index) => {
+  const checkAnswer = (index) => {
     setOptionClicked(true);
+    setSelectedIndex(index.id)
   };
 
   const handleNextBtnClick = () => {
     setOptionClicked(false);
     getQuestion(data);
   };
-console.log(answer,"answer")
-console.log('question', question)
   return (
     <div className="app-container">
       <div>
@@ -47,6 +47,7 @@ console.log('question', question)
           checkAnswer={checkAnswer}
           handleNextBtnClick={handleNextBtnClick}
           optionClicked={optionClicked}
+          selectedIndex={selectedIndex}
         />
       </div>
     </div>

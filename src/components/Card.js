@@ -6,6 +6,7 @@ export default function Card({
     checkAnswer,
     optionClicked,
     handleNextBtnClick,
+    selectedIndex
 }) {
     return (
         <div className="quiz-card">
@@ -16,7 +17,7 @@ export default function Card({
                 return (
                     <div
                         key={index}
-                        className={`options`}
+                        className={`options ${optionClicked && item.isCorrect ? "right-ans" : ""} ${optionClicked && selectedIndex === index && !item.isCorrect ? 'wrong-ans' : ""} `}
                         onClick={() => (!optionClicked && checkAnswer(item, index))}
                     >
                         <span>{alph[index]}</span>
@@ -24,8 +25,7 @@ export default function Card({
                     </div>
                 );
             })}
-
             {optionClicked && <button onClick={handleNextBtnClick}>Next</button>}
-        </div>
+        </div >
     );
 }
