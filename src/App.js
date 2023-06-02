@@ -50,7 +50,7 @@ export default function App() {
     setOptionClicked(true);
     setSelectedIndex(index);
     setQuestionCount(prev => prev + 1)
-    if(ans === answer){
+    if (ans === answer) {
       setCorrctAnsCount(prev => prev + 1)
     }
   };
@@ -59,12 +59,19 @@ export default function App() {
     setOptionClicked(false);
     getQuestion(data);
   };
+
+  const tryAgain = () => {
+    getQuestion(data)
+    setQuestionCount(0)
+    setCorrctAnsCount(0)
+    setOptionClicked(false)
+  }
   console.log('questionCount', correctAnsCount)
   return (
     <div className="app-container">
       <div>
         <h2>Country Quiz</h2>
-        {10 === 10 ? <Result correctAnsCount={correctAnsCount} /> : <Card
+        {questionCount === 10 ? <Result correctAnsCount={correctAnsCount} tryAgain={tryAgain} /> : <Card
           question={question}
           options={options}
           checkAnswer={checkAnswer}
