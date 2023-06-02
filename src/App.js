@@ -20,10 +20,16 @@ export default function App() {
   }, []);
   const getQuestion = (data) => {
     var random = Math.floor(Math.random() * 247);
-    console.log(random);
-    if(data[random].capital){
-      setIsFlag(false)
-      setQuestion(data && data[random].capital[0]);
+    var ran2 = Math.floor(Math.random() * 2) === 1
+    if (ran2) {
+      if (data[random].capital) {
+        setIsFlag(false)
+        setQuestion(data && data[random].capital[0]);
+      }
+      else {
+        setQuestion(data[random].flags.png);
+        setIsFlag(true)
+      }
     }
     else{
       setQuestion(data[random].flags.png);
