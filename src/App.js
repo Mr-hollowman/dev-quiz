@@ -64,7 +64,7 @@ export default function App() {
     <div className="app-container">
       <div>
         <h2>Country Quiz</h2>
-        {questionCount === 10 ? <Result /> : <Card
+        {10 === 10 ? <Result correctAnsCount={correctAnsCount} /> : <Card
           question={question}
           options={options}
           checkAnswer={checkAnswer}
