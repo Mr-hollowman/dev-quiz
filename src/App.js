@@ -31,7 +31,7 @@ export default function App() {
         setIsFlag(true)
       }
     }
-    else{
+    else {
       setQuestion(data[random].flags.png);
       setIsFlag(true)
     }

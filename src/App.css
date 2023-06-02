@@ -47,3 +47,15 @@
   width: 150px;
   height: 70px;
 }
+.next-btn{
+  padding: 10px;
+  border: none;
+  border-radius: 12px;
+  background-color: #F9A826;
+  color: #fff;
+  margin-left: 250px;
+}
+.invisible-btn{
+  margin-top: 10px;
+  visibility: hidden;
+}

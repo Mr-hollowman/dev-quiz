@@ -51,7 +51,7 @@ export default function Card({
                     </div>
                 );
             })}
-            {optionClicked && <button onClick={handleNextBtnClick}>Next</button>}
+            <button className={optionClicked ? "next-btn": "invisible-btn"} onClick={handleNextBtnClick}>Next</button>
         </div >
     );
 }
