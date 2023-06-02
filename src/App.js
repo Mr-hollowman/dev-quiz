@@ -9,7 +9,6 @@ export default function App() {
   const [answer, setAnswer] = useState(null);
   const [options, setOptions] = useState([]);
   const [optionClicked, setOptionClicked] = useState(false);
-  const [rightAnswer, setRightAnswer] = useState(false);
 
   useEffect(() => {
     axios("https://restcountries.com/v3.1/all").then((res) => {
@@ -23,20 +22,21 @@ export default function App() {
     setAnswer(data && data[random].name.common);
     var options = [];
     for (let i = 0; i < 4; i++) {
-      options.push(data[random + i].name.common);
+      const opt = { id: i, text: data[random + i].name.common, isCorrect: i === 0 }
+      options.push(opt);
     }
     setOptions(options);
   };
-  const checkAnswer = (ans) => {
+  const checkAnswer = (ans, index) => {
     setOptionClicked(true);
-    setRightAnswer(answer === ans);
   };
 
   const handleNextBtnClick = () => {
     setOptionClicked(false);
     getQuestion(data);
   };
-
+console.log(answer,"answer")
+console.log('question', question)
   return (
     <div className="app-container">
       <div>
@@ -47,7 +47,6 @@ export default function App() {
           checkAnswer={checkAnswer}
           handleNextBtnClick={handleNextBtnClick}
           optionClicked={optionClicked}
-          rightAnswer={rightAnswer}
         />
       </div>
     </div>

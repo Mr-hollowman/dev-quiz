@@ -23,3 +23,11 @@
 .options:hover{
   background-color: #F9A826;
 }
+
+.right-ans{
+  background-color: #60BF88;
+}
+
+.wrong-ans{
+  background-color: #EA8282;
+}
