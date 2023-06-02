@@ -40,7 +40,7 @@ export default function Card({
                     <div
                         key={index}
                         className={`options ${optionClicked && item.isCorrect ? "right-ans" : ""} ${optionClicked && selectedIndex === index && !item.isCorrect ? 'wrong-ans' : ""} `}
-                        onClick={() => (!optionClicked && checkAnswer(index))}
+                        onClick={() => (!optionClicked && checkAnswer(index, item.text))}
                     >
                         <div className="opt">
                             <span>{alph[index]}</span>
