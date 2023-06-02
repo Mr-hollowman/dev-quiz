@@ -66,7 +66,6 @@ export default function App() {
     setCorrctAnsCount(0)
     setOptionClicked(false)
   }
-  console.log('questionCount', correctAnsCount)
   return (
     <div className="app-container">
       <div>
