@@ -11,6 +11,7 @@
   padding: 30px;
   border-radius: 15px;
   min-width: 300px;
+  max-width: 300px;
 }
 .options{
   display: flex;
