@@ -6,7 +6,8 @@ export default function Card({
     checkAnswer,
     optionClicked,
     handleNextBtnClick,
-    selectedIndex
+    selectedIndex,
+    isFlag
 }) {
     const rightIcon = () => {
         return <svg xmlns="http://www.w3.org/2000/svg" width="19" height="15" fill="currentColor" className="bi bi-check" viewBox="0 -2 16 16">
@@ -20,7 +21,8 @@ export default function Card({
     }
     return (
         <div className="quiz-card">
-            <h4>{question} is the capital of</h4>
+            {isFlag && <div><img src={question} alt="flag" className="flag-img" /><h4>The above Flag is belogs to which country</h4></div>}
+            {!isFlag && <h4>{question} is the capital of</h4>}
 
             {options.sort((a, b) => {
                 var first = a.text.toLowerCase()
