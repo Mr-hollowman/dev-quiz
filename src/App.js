@@ -30,7 +30,7 @@ export default function App() {
   };
   const checkAnswer = (index) => {
     setOptionClicked(true);
-    setSelectedIndex(index.id)
+    setSelectedIndex(index)
   };
 
   const handleNextBtnClick = () => {
